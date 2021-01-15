@@ -15,7 +15,7 @@ async def post(URL):
 async def postlist():
   #await post("https://post.hrtk92.repl.co/")
   await post("https://web.hrtk92.repl.co/")
-  await post("https://fortnite-lobbybot.hrsnow.repl.co/")
+  #await post("https://fortnite-lobbybot.hrsnow.repl.co/")
   
 while True:
     time.sleep(1)
