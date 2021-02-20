@@ -1,1 +1,1 @@
-fnbot: python main.py
+post: python index.py
