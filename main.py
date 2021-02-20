@@ -13,11 +13,10 @@ async def post(URL):
       print(f'{time_display()} 完了  ｜{URL}')
       
 async def postlist():
-  #await post("https://post.hrtk92.repl.co/")
-  await post("https://web.hrtk92.repl.co/")
-  #await post("https://fortnite-lobbybot.hrsnow.repl.co/")
+  #await post("https://")
+  pass
   
 while True:
-    time.sleep(1)
+    time.sleep(10)
     loop = asyncio.get_event_loop()
     loop.run_until_complete(postlist())
