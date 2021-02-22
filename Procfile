@@ -1,1 +1,0 @@
-post: python index.py
