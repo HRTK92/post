@@ -13,7 +13,7 @@ async def post(URL):
       print(f'{time_display()} 完了  ｜{URL}')
       
 async def postlist():
-  await post("https://www.warera.ml/")
+  await post("https://linebot.warera.ml/")
   
 while True:
     time.sleep(10)
