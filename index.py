@@ -16,6 +16,6 @@ async def postlist():
   await post("https://linebot.warera.ml/")
   
 while True:
-    time.sleep(10)
+    time.sleep(30)
     loop = asyncio.get_event_loop()
     loop.run_until_complete(postlist())
