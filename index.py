@@ -14,7 +14,7 @@ async def post(URL):
       
 async def postlist():
   await post("https://linebot.warera.ml/")
-  await post('https://www.warera.ml/')
+  #await post('https://www.warera.ml/')
   
 while True:
     time.sleep(30)
