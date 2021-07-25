@@ -1,22 +1,28 @@
-import aiohttp
 import asyncio
 import datetime
 import time
 
+import aiohttp
+import requests
+from colorama import Fore, Back, Style
+
+
 def time_display():
-  dt_now = datetime.datetime.now()
-  return dt_now.strftime('[%H:%M:%S]')
-async def post(URL):
-  print(f'{time_display()} 送信中｜{URL}')
-  async with aiohttp.ClientSession() as session:
-    async with session.post(URL) as resp:
-      print(f'{time_display()} 完了  ｜{URL}')
-      
-async def postlist():
-  await post("https://linebot.warera.ml/")
-  #await post('https://www.warera.ml/')
-  
-while True:
-    time.sleep(30)
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(postlist())
+    dt_now = datetime.datetime.now()
+    return dt_now.strftime('[%H:%M:%S]')
+
+
+def post(url):
+    url = url.rstrip('\n')
+    print(f'{Fore.GREEN}[{time_display()}] {Style.RESET_ALL}{Style.DIM}[sending...]{Style.RESET_ALL}   {Style.DIM}{url}{Style.RESET_ALL}')
+    requests.post(url)
+    print(f'{Fore.GREEN}[{time_display()}] {Style.RESET_ALL}{Fore.GREEN}[Done]{Style.RESET_ALL}   {Style.DIM}{url}{Style.RESET_ALL}')
+
+
+
+with open("list.txt", "r") as file:
+    file_list = file
+    while True:
+        for url in file_list:
+            post(url)
+        time.sleep(10)
