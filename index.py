@@ -2,7 +2,6 @@ import asyncio
 import datetime
 import time
 
-import aiohttp
 import requests
 from colorama import Fore, Back, Style
 
