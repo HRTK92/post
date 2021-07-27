@@ -24,4 +24,4 @@ with open("list.txt", "r") as file:
     while True:
         for url in file_list:
             post(url)
-        time.sleep(10)
+        time.sleep(60)
